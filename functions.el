@@ -73,3 +73,6 @@ don't include an '='."
 (global-set-key (kbd "C-;") 'swap-window-positions)
 (global-set-key (kbd "C-M-{") 'indent-buffer)
 (global-set-key (kbd "M-{") 'indent-region)
+
+(defun untabify-buffer ()
+  nil)
