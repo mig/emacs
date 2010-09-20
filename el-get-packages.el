@@ -1,7 +1,8 @@
 (require 'el-get)
 (load "el-get-after-hooks.el")
 (setq el-get-sources
-      '((:name color-theme)
+      '((:name package)
+				(:name color-theme)
         ;; (:name color-theme-merbivore
         ;;        :type git
         ;;        :url "http://github.com/mig/color-theme-merbivore.git"
