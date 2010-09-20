@@ -1,3 +1,6 @@
+(defun color-theme-merbivore-after-hook () (color-theme-merbivore))
+(defun color-theme-railscasts-after-hook () (color-theme-railscasts))
+
 (defun textmate-after-hook ()
   (textmate-mode t)
   (global-set-key (kbd "M-RET") 'textmate-next-line)

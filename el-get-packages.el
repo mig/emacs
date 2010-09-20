@@ -2,7 +2,14 @@
 (load "el-get-after-hooks.el")
 (setq el-get-sources
       '((:name color-theme)
-        (:name color-theme-twilight)
+        ;; (:name color-theme-merbivore
+        ;;        :type git
+        ;;        :url "http://github.com/mig/color-theme-merbivore.git"
+        ;;        :load "color-theme-merbivore.el")
+        (:name color-theme-railscasts
+               :type git
+               :url "git://github.com/mig/color-theme-railscasts.git"
+               :load "color-theme-railscasts.el")
         (:name textmate
                :type http
                :url "http://github.com/defunkt/textmate.el/raw/master/textmate.el"
@@ -12,7 +19,7 @@
         (:name ruby-compilation :type elpa)
         (:name rvm 
                :type git
-               :url "http://github.com/djwhitt/rvm.el.git"
+               :url "git://github.com/djwhitt/rvm.el.git"
                :load "rvm.el")
         (:name jump
                :type git
