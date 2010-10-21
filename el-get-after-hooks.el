@@ -1,5 +1,6 @@
 (defun color-theme-merbivore-after-hook () (color-theme-merbivore))
 (defun color-theme-railscasts-after-hook () (color-theme-railscasts))
+(defun color-theme-sanityinc-after-hook () (color-theme-sanityinc-light))
 
 (defun textmate-after-hook ()
   (textmate-mode t)
@@ -12,6 +13,7 @@
 
 (defun ruby-mode-after-hook ()
   (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
+  (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))

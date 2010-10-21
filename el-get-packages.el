@@ -2,11 +2,12 @@
 (load "el-get-after-hooks.el")
 (setq el-get-sources
       '((:name package)
+        (:name rainbow-mode)
 				(:name color-theme)
-        ;; (:name color-theme-merbivore
+        ;; (:name color-theme-sanityinc
         ;;        :type git
-        ;;        :url "http://github.com/mig/color-theme-merbivore.git"
-        ;;        :load "color-theme-merbivore.el")
+        ;;        :url "git://github.com/purcell/color-theme-sanityinc.git"
+        ;;        :load "color-theme-sanityinc.el")
         (:name color-theme-railscasts
                :type git
                :url "git://github.com/mig/color-theme-railscasts.git"
@@ -22,16 +23,14 @@
                :type git
                :url "git://github.com/djwhitt/rvm.el.git"
                :load "rvm.el")
-        (:name jump
-               :type git
-               :url "git://github.com/eschulte/jump.el.git")
         (:name rinari
                :type git
                :url "git://github.com/mig/rinari.git"
-               :features rinari)
+               :features rinari
+               :load-path ("." "util" "util/jump"))
         (:name rhtml
                :type git
-               :url "git://github.com/eschulte/rhtml.git"
+               :url "git://github.com/mig/rhtml.git"
                :features rhtml-mode)
         (:name yaml-mode 
                :type git
@@ -41,4 +40,3 @@
         (:name css-mode :type elpa)
         ))
 (el-get)
-
