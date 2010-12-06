@@ -58,7 +58,10 @@
                :load "color-theme-railscasts.el"
                :after (lambda () (color-theme-railscasts)))
         (:name rainbow-mode)
-        (:name ruby-mode :type elpa :after (lambda () (go-ruby)))
+        (:name ruby-mode 
+               :type elpa
+               :load "ruby-mode.el"
+               :after (lambda () (go-ruby)))
         (:name inf-ruby  :type elpa)
         (:name ruby-compilation :type elpa)
         (:name css-mode :type elpa :after (lambda () (go-css)))
