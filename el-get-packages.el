@@ -24,7 +24,7 @@
        (require 'inf-ruby)
        (require 'ruby-compilation)
 			 (load "helpers/rails.el")
-       (define-key ruby-mode-map (kbd "M-r") 'run-rails-test)
+       (define-key ruby-mode-map (kbd "M-r") 'run-rails-test-or-ruby-buffer)
        (define-key ruby-mode-map (kbd "C-l") 'insert-ruby-hash-pointer))))
 
 (defun go-rhtml ()
