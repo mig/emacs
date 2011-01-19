@@ -1,3 +1,36 @@
+(setq path "/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin")
+(setenv "PATH" path)
+(push "/usr/local/bin" exec-path)
+
+(setq default-input-method "MacOSX")
+(setq ns-command-modifier 'meta)
+(setq mac-option-modifier 'super)
+
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+(setq-default tab-width 2)
+(setq js-indent-level 2)
+(setq-default indent-tabs-mode nil)
+(setq inhibit-startup-message t)
+(setq ring-bell-function 'ignore)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(delete-selection-mode t)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(blink-cursor-mode t)
+(show-paren-mode t)
+(column-number-mode t)
+(set-fringe-style -1)
+(tooltip-mode -1)
+
+(set-frame-font "Menlo-15")
+(load-theme 'tango-dark)
+
+;; load global helpers for some neat functions
+(load "helpers/global.el")
+
 (global-unset-key (kbd "M-n"))
 (global-unset-key (kbd "M-o"))
 (global-unset-key (kbd "M-s"))
@@ -20,34 +53,13 @@
 (define-key lisp-mode-shared-map (kbd "M-r") 'eval-buffer)
 (define-key lisp-mode-shared-map (kbd "C-j") 'eval-last-sexp)
 
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-(setq-default tab-width 2)
-(setq js-indent-level 2)
-(setq-default indent-tabs-mode nil)
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq inhibit-startup-message t)
-(delete-selection-mode t)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(blink-cursor-mode t)
-(show-paren-mode t)
-(column-number-mode t)
-(set-fringe-style -1)
-(tooltip-mode -1)
-(setq ring-bell-function 'ignore)
-(set-face-attribute 'mode-line nil :box nil)
-(setq frame-title-format '(buffer-file-name "%f" ("%b")))
-(setq path "/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin")
-(setenv "PATH" path)
-(push "/usr/local/bin" exec-path)
-(set-default-font "-apple-Menlo-medium-normal-normal-*-13-*-*-*-m-0-iso10646-1")
+;; these functions are found in helpers/global
+(global-set-key (kbd "M-n") 'maximize-frame)
+(global-set-key (kbd "M-N") 'ns-toggle-fullscreen)
+(global-set-key (kbd "C-k") 'delete-whole-line)
+(global-set-key (kbd "C-M-{") 'indent-buffer)
+(global-set-key (kbd "C-;") 'swap-window-positions)
 
-(setq default-input-method "MacOSX")
-(setq ns-command-modifier 'meta)
-(setq mac-option-modifier 'super)
-
-;; ido stuff
 (recentf-mode 1)
 (require 'ido)
 (ido-mode t)

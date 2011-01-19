@@ -4,7 +4,6 @@
                   (display-pixel-width)
                   (display-pixel-height))
   (set-frame-position (selected-frame) 0 0))
-(global-set-key (kbd "M-n") 'maximize-frame)
 
 (defun delete-whole-line ()
   (interactive)
@@ -12,12 +11,10 @@
                     (point))))
     (forward-line 1)
     (delete-region beg (point))))
-(global-set-key (kbd "C-k") 'delete-whole-line)
 
 (defun indent-buffer ()
   (interactive)
   (indent-region (point-min) (point-max)))
-(global-set-key (kbd "C-M-{") 'indent-buffer)
 
 (defun delete-this-file ()
   (interactive)
@@ -41,6 +38,6 @@
       (set-window-buffer (selected-window) other-window-buffer)
       (set-window-hscroll (selected-window) other-window-hscroll)
       (set-window-point (selected-window) other-window-point)
-      (set-window-start (selected-window) other-window-start))
-    (select-window other-window)))
-(global-set-key (kbd "C-;") 'swap-window-positions)
+      (set-window-start (selected-window) other-window-select))
+    (start-window other-window)))
+
