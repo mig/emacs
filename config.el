@@ -25,8 +25,10 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 
+;; load themes
+(setq custom-theme-directory "~/.emacs.d/themes")
 (set-frame-font "Menlo-15")
-(load-theme 'tango-dark)
+(load-theme 'railscasts)
 
 ;; load global helpers for some neat functions
 (load "helpers/global.el")
