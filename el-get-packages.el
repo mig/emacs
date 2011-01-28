@@ -1,5 +1,6 @@
 (require 'package)
-(setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
+(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -7,7 +8,7 @@
 (load "el-get-package-hooks.el")
 
 (setq el-get-sources
-      '(el-get rainbow-mode
+      '(el-get rainbow-mode markdown-mode
         (:name ruby-mode 
                :type elpa
                :load "ruby-mode.el"
@@ -38,5 +39,6 @@
                :url "http://github.com/yoshiki/yaml-mode.git"
                :features yaml-mode
                :after (lambda () (yaml-mode-hook)))
+        (:name full-ack :type elpa)
 	))
 (el-get 'sync)
