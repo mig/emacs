@@ -24,12 +24,13 @@
 (column-number-mode t)
 (set-fringe-style -1)
 (tooltip-mode -1)
+(global-auto-revert-mode 1)
 
 ;; load themes
 (setq custom-theme-directory "~/.emacs.d/themes")
-(set-frame-font "Menlo-15")
+(set-frame-font "Menlo-13")
 (load-theme 'railscasts)
-
+;(load-theme 'tango)
 ;; load global helpers for some neat functions
 (load "helpers/global.el")
 
