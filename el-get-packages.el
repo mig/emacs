@@ -29,10 +29,10 @@
                :load "rvm.el"
                :compile ("rvm.el")
                :after (lambda () (rvm-autodetect-ruby)))
-        (:name rhtml
+        (:name rhtml-mode
                :type git
-               :url "https://github.com/eschulte/rhtml.git"
-               :features rhtml-mode
+               :url "https://github.com/crazycode/rhtml.git"
+               :load-path (".")
                :after (lambda () (rhtml-mode-hook)))
         (:name yaml-mode 
                :type git
