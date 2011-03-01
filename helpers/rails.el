@@ -23,3 +23,7 @@ don't include an '='."
              (command (list ruby-compilation-executable "-I" test-path path)))
         (pop-to-buffer (ruby-compilation-do filename command)))
     (ruby-compilation-this-buffer)))
+
+(defun run-rails-console ()
+  (interactive)
+  (run-ruby (expand-file-name "script/console" (textmate-project-root))))

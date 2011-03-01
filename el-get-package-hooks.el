@@ -23,6 +23,8 @@
                                (require 'ruby-compilation)
                                (load "helpers/rails.el")
                                (define-key ruby-mode-map (kbd "M-r") 'run-rails-test-or-ruby-buffer)
+                               (define-key ruby-mode-map (kbd "C->") 'insert-erb-skeleton)
+                               (define-key ruby-mode-map (kbd "M-C->") (lambda () (insert-erb-skeleton 0)))
                                (define-key ruby-mode-map (kbd "C-l") 'insert-ruby-hash-pointer))))
 
 (defun rhtml-mode-hook ()
