@@ -11,7 +11,6 @@
       '(el-get rainbow-mode markdown-mode
         (:name ruby-mode 
                :type elpa
-               :load "ruby-mode.el"
                :after (lambda () (ruby-mode-hook)))
         (:name inf-ruby  :type elpa)
         (:name ruby-compilation :type elpa)
@@ -25,20 +24,25 @@
                :after (lambda () (textmate-mode-hook)))
         (:name rvm
                :type git
-               :url "http://github.com/djwhitt/rvm.el.git"
+               :url "git://github.com/djwhitt/rvm.el.git"
                :load "rvm.el"
                :compile ("rvm.el")
                :after (lambda () (rvm-autodetect-ruby)))
-        (:name rhtml-mode
+        (:name rhtml
                :type git
-               :url "https://github.com/crazycode/rhtml.git"
+               :url "git://github.com/crazycode/rhtml.git"
                :load-path (".")
+               :features rhtml-mode
                :after (lambda () (rhtml-mode-hook)))
         (:name yaml-mode 
                :type git
-               :url "http://github.com/yoshiki/yaml-mode.git"
+               :url "git://github.com/yoshiki/yaml-mode.git"
                :features yaml-mode
                :after (lambda () (yaml-mode-hook)))
+        (:name emacs-xcode
+               :type git
+               :url "git://github.com/senny/emacs-xcode.git"
+               :features xcode)
         (:name full-ack :type elpa)
 	))
 (el-get 'sync)
