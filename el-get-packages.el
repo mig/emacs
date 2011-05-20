@@ -39,10 +39,6 @@
                :url "git://github.com/yoshiki/yaml-mode.git"
                :features yaml-mode
                :after (lambda () (yaml-mode-hook)))
-        (:name emacs-xcode
-               :type git
-               :url "git://github.com/senny/emacs-xcode.git"
-               :features xcode)
         (:name full-ack :type elpa)
 	))
 (el-get 'sync)
