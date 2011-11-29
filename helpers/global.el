@@ -1,16 +1,15 @@
-(defun maximize-frame ()
-  (interactive)
-  (set-frame-size (selected-frame)
-                  (display-pixel-width)
-                  (display-pixel-height))
-  (set-frame-position (selected-frame) 0 0))
-
 (defun delete-whole-line ()
   (interactive)
   (let ((beg (progn (forward-line 0)
                     (point))))
     (forward-line 1)
     (delete-region beg (point))))
+
+(defun kill-region-and-save ()
+  (interactive)
+  (save-excursion
+    (kill-ring-save (region-beginning) (region-end))
+    (kill-region (region-beginning) (region-end))))
 
 (defun indent-buffer ()
   (interactive)
@@ -41,3 +40,16 @@
       (set-window-start (selected-window) other-window-select))
     (start-window other-window)))
 
+(defun cat-run (command-string-list)
+  (let (cmd)
+    (setq cmd (combine-and-quote-strings command-string-list))
+    (message cmd)
+    (shell-command-to-string cmd)))
+
+(defun list-to-string (list &optional delim)
+  (mapconcat 'identity list delim))
+
+(defun replace-regexp-and-return (from to)
+  (save-excursion
+    (while (re-search-forward from nil t)
+      (replace-match to))))

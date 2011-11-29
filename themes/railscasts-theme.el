@@ -8,7 +8,7 @@
  '(highlight ((t (:background "#333435"))))
  '(region ((t (:background "#333435"))))
  '(font-lock-builtin-face ((t (:foreground "#d0d0ff"))))
- '(font-lock-comment-face ((t (:foreground "#444444"))))
+ '(font-lock-comment-face ((t (:foreground "#555555"))))
  '(font-lock-constant-face ((t (:foreground "#6d9cbe"))))
  '(font-lock-function-name-face ((t (:foreground "#ffc66d"))))
  '(font-lock-keyword-face ((t (:foreground "#cc7833"))))
@@ -30,7 +30,7 @@
 				:background "#1f1f1f" :foreground "#333333"))))
  '(isearch ((t (:background "#555555"))))
  '(minibuffer-prompt ((t (:bold t :foreground "#cc7833"))))
- '(show-paren-match-face ((t (:foreground "#444444" :background "#e6e1dc"))))
+ '(show-paren-match-face ((t (:foreground "#444444" :background "#cc7833"))))
  '(show-paren-mismatch-face ((t (:foreground "#444444" :background "#990000"))))
  '(lazy-highlight ((t (:background "#cc7833")))))
 

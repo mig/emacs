@@ -19,10 +19,9 @@
                                (setq ruby-deep-arglist t)
                                (setq ruby-deep-indent-paren nil)
                                (setq c-tab-always-indent nil)
-                               (require 'inf-ruby)
-                               (require 'ruby-compilation)
+                               (setq ruby-insert-encoding-magic-comment nil)
                                (load "helpers/rails.el")
-                               (define-key ruby-mode-map (kbd "M-r") 'run-rails-test-or-ruby-buffer)
+                               (define-key ruby-mode-map (kbd "M-r") 'ruby-compilation-this-buffer)
                                (define-key ruby-mode-map (kbd "C-l") 'insert-ruby-hash-pointer))))
 
 (defun rhtml-mode-hook ()
@@ -33,10 +32,16 @@
                                 (load "helpers/rails.el")
                                 (define-key rhtml-mode-map (kbd "M-s") 'save-buffer)
                                 (define-key rhtml-mode-map (kbd "C-l") 'insert-ruby-hash-pointer)
-                                (define-key rhtml-mode-map (kbd "C->") 'insert-erb-skeleton)
-                                (define-key rhtml-mode-map (kbd "C-M->") (lambda ()
-                                                                           (interactive)
-                                                                           (insert-erb-skeleton 0))))))
+                                (define-key rhtml-mode-map (kbd "M->") 'insert-erb-skeleton))))
+
+(defun rinari-mode-hook ()
+  (ruby-mode-hook)
+  (progn
+    (eval-after-load 'ruby-mode
+      '(progn
+         ;; work around possible elpa bug
+         (ignore-errors (require 'ruby-compilation))
+         (setq ruby-use-encoding-map nil)))))
 
 (defun yaml-mode-hook ()
   (autoload 'yaml-mode "yaml-mode" nil t)
@@ -48,3 +53,9 @@
   (add-hook 'css-mode-hook '(lambda ()
                               (setq css-indent-level 2)
                               (setq css-indent-offset 2))))
+
+(defun nav-mode-hook ()
+  (global-set-key (kbd "M-\\") 'nav))
+
+(defun nterm-hook ()
+  (setq nterm-shell "/usr/local/bin/zsh"))
