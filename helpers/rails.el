@@ -22,7 +22,7 @@
        (progn 
          (goto-char start-point) 
          (insert "<%=  %>") 
-         (backward-char 3))))))
+         (backward-char 3)))))))
 
 ;; these functions depend on textmate-mode and ruby-compilation
 (defun rails-app-p ()
